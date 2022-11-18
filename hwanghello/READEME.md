@@ -7,17 +7,22 @@ Image View를 추가해 간단한 사진을 추가했습니다.<br>
 
 앱 아이콘, 런치 스크린, 앱 기능들 캡쳐
 
-<h2>앱 아이콘</h2>
-<img width="51" alt="스크린샷 2022-11-18 오후 1 17 36" src="https://user-images.githubusercontent.com/90561061/202619370-91784e24-379b-4e72-9a41-454a54eca706.png">
+<h2>앱 아이콘 : hwanghello</h2>
+<img width="389" alt="스크린샷 2022-11-18 오후 2 37 19" src="https://user-images.githubusercontent.com/90561061/202628744-535d9b57-5d40-4a37-b5d8-62cc199e9627.png">
+
 
 <h2>런치 스크린</h2>
-<img width="251" alt="스크린샷 2022-11-18 오후 1 16 17" src="https://user-images.githubusercontent.com/90561061/202619635-697f2ecc-f75d-46eb-9685-7667c90e92b5.png">
+<img width="319" alt="스크린샷 2022-11-18 오후 2 11 13" src="https://user-images.githubusercontent.com/90561061/202628769-22fd73f1-fe07-44d1-9d20-e6a320351ab5.png">
+
 
 <h2>앱 메인</h2>
-<img width="450" alt="스크린샷 2022-11-18 오후 1 11 55" src="https://user-images.githubusercontent.com/90561061/202619670-a855229b-7912-4504-8273-c0f3325d5253.png">
+![Simulator Screen Shot - iPhone 14 - 2022-11-18 at 14 38 34](https://user-images.githubusercontent.com/90561061/202628933-ec5a074b-57e9-458a-b512-46a094fae3d4.png)
+
 
 <h2>누르세요 버튼 클릭</h2>
-<img width="450" alt="스크린샷 2022-11-18 오후 1 12 30" src="https://user-images.githubusercontent.com/90561061/202619695-45068554-baa0-4641-9a08-d042d343092e.png">
+![Simulator Screen Shot - iPhone 14 - 2022-11-18 at 14 38 57](https://user-images.githubusercontent.com/90561061/202628943-6b6817be-b079-4a53-ace9-8acd7303724a.png)
+
 
 <h2>Delete 버튼 클릭</h2>
-<img width="450" alt="스크린샷 2022-11-18 오후 1 12 44" src="https://user-images.githubusercontent.com/90561061/202619709-a42a9fa4-d28d-4249-9d82-4a004218b9b9.png">
+![Simulator Screen Shot - iPhone 14 - 2022-11-18 at 14 38 57](https://user-images.githubusercontent.com/90561061/202628956-5f0ef7bf-d2c0-4e53-862f-996326d8ce47.png)
+
