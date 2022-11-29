@@ -14,6 +14,22 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func sc(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            print("남성")
+        } else {
+            print("여성")
+        }
+    }
+    
+    @IBAction func swOnOff(_ sender: UISwitch) {
+        if sender.isOn {
+            print("On")
+        } else {
+            print("Off")
+        }
+    }
+    
     @IBAction func calcBmi(_ sender: UIButton) {
         //let weight = 60.0
         //let height = 170.0
