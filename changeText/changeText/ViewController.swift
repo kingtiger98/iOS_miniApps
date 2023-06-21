@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var txtLabel: UILabel!
+    @IBOutlet weak var myBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,7 @@ class ViewController: UIViewController {
     @IBAction func changeBtn(_ sender: Any) {
         txtLabel.text = "황재하에용"
         txtLabel.backgroundColor = .green
+        myBtn.backgroundColor = .blue
     }
 }
 

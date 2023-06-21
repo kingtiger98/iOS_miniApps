@@ -44,12 +44,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="myBtn" destination="D2G-Dh-cav" id="94d-AK-scu"/>
                         <outlet property="txtLabel" destination="34h-2s-JCw" id="G57-jc-4YH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="4"/>
+            <point key="canvasLocation" x="21" y="-63"/>
         </scene>
     </scenes>
     <resources>
