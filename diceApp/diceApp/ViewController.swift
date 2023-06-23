@@ -25,6 +25,9 @@ class ViewController: UIViewController {
         firstImg.image = UIImage(named: diceList.randomElement()!)
         secondImg.image = UIImage(named: diceList.randomElement()!)
 
+        
+        
+        
     }
     
 }
