@@ -9,11 +9,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // 승,패,비김 출력
     @IBOutlet weak var mainLb: UILabel!
     
+    // 컴퓨터 UI
     @IBOutlet weak var aiPick: UIImageView!
     @IBOutlet weak var aiPickLb: UILabel!
     
+    // 플레이어 UI
     @IBOutlet weak var playerPick: UIImageView!
     @IBOutlet weak var playerPickLb: UILabel!
     
