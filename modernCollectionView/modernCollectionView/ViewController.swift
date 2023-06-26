@@ -9,35 +9,69 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // 컬렉션뷰 생성
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
+    
+    private var dataSource: UICollectionViewDiffableDataSource<Sections, Items>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        collectionView.register(BannerCollectionViewCell.self, forCellWithReuseIdentifier: BannerCollectionViewCell.id)
+        collectionView.setCollectionViewLayout(createLayout(), animated: true)
+        setDataSource()
+        setSnapShot()
+    }
+    
+    private func setDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<Sections, Items>(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BannerCollectionViewCell.id, for: indexPath) as? BannerCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            return cell
+        })
+    }
+    
+    private func setSnapShot() {
+        var snapshot = NSDiffableDataSourceSnapshot<Sections, Items>()
+        
+        snapshot.appendSections([Sections(id: "Banner")])
+        let bannerItems = [
+            Items.banner(HomeItem(title: "인덕대학교", imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXrLRIRC6S5ahTx-4x7HdWYT7pwp_-1l5EGixErJ_6Gtw1oSh8wS7r8YvOG_0pbYU5Sk4&usqp=CAU")),
+            Items.banner(HomeItem(title: "인덕대학교2", imageUrl:
+                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXrLRIRC6S5ahTx-4x7HdWYT7pwp_-1l5EGixErJ_6Gtw1oSh8wS7r8YvOG_0pbYU5Sk4&usqp=CAU")),
+            Items.banner(HomeItem(title: "인덕대학교3", imageUrl:
+                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXrLRIRC6S5ahTx-4x7HdWYT7pwp_-1l5EGixErJ_6Gtw1oSh8wS7r8YvOG_0pbYU5Sk4&usqp=CAU"))
+        ]
+        
+        snapshot.appendItems(bannerItems, toSection: Sections(id: "Banner"))
+        dataSource?.apply(snapshot)
+    }
+
+    private func createLayout() -> UICollectionViewCompositionalLayout {
+        return UICollectionViewCompositionalLayout(sectionProvider: { sectionIndex, _ in
+              let section = self.createBannerSection()
+              return section
+          })
+    }
+    
+    private func createBannerSection() -> NSCollectionLayoutSection{
+        // item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        // group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(200))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        // section
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .groupPaging
+        
+        return section
     }
 
 }
 
-// 컬렉션 뷰 생성 전 섹션과 아이템 정의
-// 구현 전 설명 ===================================================
-// Sections안에 Items이 있고
-// Items은 세 가지 타입이 있다 (banner, normalCarousel, listCarousel)
-// 세 가지의 타입의 셀 안의 데이터는 HomeItem이 들어간다
 
-// collectionView의 섹션이나 아이템이 되려면 Hashable이라는 프로토콜 채택 필수!
-
-struct Sections: Hashable {
-    let id: String
-}
-
-// api를 통해 가져온 데이터들은 Items의 안에 들어갈 것임
-enum Items: Hashable {
-    case banner(HomeItem)
-    case normalCarousel(HomeItem)
-    case listCarousel(HomeItem)
-}
-
-struct HomeItem: Hashable {
-    let title: String
-    let subTitle: String?
-    let imageUrl: String
-}
 
